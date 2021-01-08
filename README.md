@@ -1,2 +1,3 @@
-# unwisegeek.github.io
-GitHub Pages Repository for John the Unwise Geek
+Setup Instructions:
+
+Add a file called 'key' with your IFTTT webhook.

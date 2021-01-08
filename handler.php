@@ -4,9 +4,10 @@
 session_start();
 $val1 = $_POST["Value1"];
 $val2 = $_POST["Value2"];
-$response = exec('./pingiftt.sh "' . $val1 . '" "' . $val2 . '"')
+$response = exec('./ifttt.py "' . $val1 . '" "' . $val2 . '"');
+echo $response;
 echo '<script />';
-echo 'window.location.replace("https://unwisegeek.net/kawhat/index.html);';
+echo 'window.location.replace("https://unwisegeek.net/kawhat/index.php?name='. $val1 . '");';
 echo '</script />';
 ?>
 </body>
