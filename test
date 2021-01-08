@@ -1,0 +1,35 @@
+# Example test. Optional values are commented out.
+---
+questions:
+  "1":
+    type: "short-answer"
+    question: "Where's your head at?"
+  "2":
+    type: "multi-choice"
+    question: "Which letter is C?"
+    answers:
+      - A
+      - B
+      - C
+      # - D
+  "3":
+    type: "multi-answer"
+    question: "Which letter is A?"
+    answers:
+      - A
+      - B
+      - C
+      # - D
+  "4":
+    type: "date"
+    question: "When was the Civil Air Patrol founded?"
+  "5":
+    type: "number"
+    question: "How many chucks can a woodchuck chuck if a woodchuck could chuck wood?"
+    # min: "1"
+    # max: "100"
+  "6":
+    type: "long-answer"
+    question: "What do you think?"
+    # rows: "4"
+    # cols: "80"
