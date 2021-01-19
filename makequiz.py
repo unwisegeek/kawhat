@@ -8,20 +8,50 @@ testfile = open('test', 'r')
 test = yaml.load(testfile)
 
 # Read the page data from the test YAML and create the CSS, more or less
+bodycss = 'body { '
 print('<style \>')
 try:
-    image = test['page']['background']
+    image = test['page']['background-img']
 except:
-    print('body { background-color: black; }')
+    bodycss += ''
 else:
-    print('body {{ background-image: url("img/{}.png"); }}'.format(image))
+    bodycss += 'background-image: url("img/{}.png"); '.format(image)
 
 try:
-    boxcolor = test['page']['box-color']
+    bgcolor = test['page']['background-color']
 except:
-    print('div { background-color: white; width: 90%; padding: 25px; margin: 25px; }')
+    bodycss += 'background-color: black; '
 else:
-    print('div {{ background-color: {}; width: 90%; padding: 25px; margin: 25px; }}'.format(boxcolor))
+    bodycss += 'background-color: {}; '.format(bgcolor)
+
+bodycss += '}'
+
+boxcss = 'div { '
+boxcss += 'width: 90%; padding: 25px; margin: 25px; '
+try:
+    boximage = test['box']['background-img']
+except:
+    boxcss += ''
+else:
+    boxcss += 'background-image: url("img/{}.png"); '.format(boximage)
+
+try:
+    boxcolor = test['box']['background-color']
+except:
+    boxcss += 'background-color: white; '
+else:
+    boxcss += 'background-color: {}; '.format(boxcolor)
+
+try:
+    boxtextcolor = test['box']['text-color']
+except:
+    boxcss += 'color: black; '
+else:
+    boxcss += 'color: {}; '.format(boxtextcolor)
+
+print(bodycss)
+print(boxcss)
+
 print('</style \>')
 
 

@@ -1,8 +1,12 @@
 # Example test. Optional values are commented out.
 ---
 page:
-  #"background": "grey-weave"
-  #"box-color": "white"
+  #"background-img": "grey-weave"
+  #"background-color": blue
+box:
+  #"background-img": "grey-weave"
+  #"background-color": "green"
+  #"text-color": "white"
 questions:
   "1":
     type: "short-answer"
