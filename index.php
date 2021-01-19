@@ -7,8 +7,6 @@ echo '<html \>';
 echo '<head \>';
 echo '<title \>Welcome to Quizlish!</title \>';
 echo '</head \>';
-echo '<body \>';
-echo '<p \>';
 
 $file = './tmp/' . uniqid() . '.qz';
 
@@ -18,6 +16,5 @@ echo fread($pagedata,filesize($file));
 fclose($pagedata);
 exec('rm -f ' . $file);
 
-echo '</body \>';
 echo '</html \>';
 ?>

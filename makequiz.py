@@ -7,7 +7,27 @@ import yaml
 testfile = open('test', 'r')
 test = yaml.load(testfile)
 
+# Read the page data from the test YAML and create the CSS, more or less
+print('<style \>')
+try:
+    image = test['page']['background']
+except:
+    print('body { background-color: black; }')
+else:
+    print('body {{ background-image: url("img/{}.png"); }}'.format(image))
+
+try:
+    boxcolor = test['page']['box-color']
+except:
+    print('div { background-color: white; width: 90%; padding: 25px; margin: 25px; }')
+else:
+    print('div {{ background-color: {}; width: 90%; padding: 25px; margin: 25px; }}'.format(boxcolor))
+print('</style \>')
+
+
 # Start the form and get the quiz taker's name
+print('<body \>')
+print('<div \><p \>')
 print('<form action="handler.php" method="post" \>')
 print('Please enter your name: <input type="text" name="name" \><br \>')
 
@@ -79,4 +99,4 @@ for num in test['questions']:
         print(html)
 
 # Finally, output the submit button.
-print('<br \><input type="submit" value="Submit Answers"\>')
+print('<br \><input type="submit" value="Submit Answers"\></p \></div \></body \>')

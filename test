@@ -1,5 +1,8 @@
 # Example test. Optional values are commented out.
 ---
+page:
+  #"background": "grey-weave"
+  #"box-color": "white"
 questions:
   "1":
     type: "short-answer"
